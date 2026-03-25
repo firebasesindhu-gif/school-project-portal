@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/school-project-portal",
+    "public": "dist/school-project-portal/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
