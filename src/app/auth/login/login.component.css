@@ -1,0 +1,14 @@
+.loginPage {}
+
+.loginPage h2 {
+    margin: 15% 25% 3% 37%;
+    font-size: 40px;
+}
+
+.loginPage button {
+    margin: 0% 0% 0% 44%;
+    padding: 10px;
+    background: #e9c456;
+    border-radius: 10px;
+    font-family: sans-serif;
+}

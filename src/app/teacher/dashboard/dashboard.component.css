@@ -1,0 +1,131 @@
+/* .menubar button {
+    float: right;
+    margin-top: -3%;
+}
+
+.menubar {
+    margin-bottom: 2%;
+    text-transform: capitalize;
+}
+
+.teacherDashboard .createProjectButton {
+    float: right;
+    margin-top: -3%;
+} */
+
+
+.dashboard-container {
+  /* padding: 20px; */
+}
+
+/* Toolbar */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 1px 1px #f7f8f9;
+}
+
+.page-title {
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.logoutButton {
+  background: #ffe495;
+  border-radius: 10px;
+}
+
+/* Actions */
+.actions {
+  /* background: #f9f9f9; */
+  padding: 5px 0;
+  /* position: sticky; */
+  top: 64px;
+  /* z-index: 1000; */
+  margin: 2px 0px 10px 0px;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+}
+
+.actions button {
+  background: #9df3cf;
+  border-radius: 10px;
+  padding: 10px;  
+  text-align: right;
+}
+
+/* Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.project-card {
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+  background: #fafbfd;
+  box-shadow: 5px 5px aliceblue;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.project-card mat-card-header {
+  font-weight: bold;
+  font-size: 22px !important;
+  align-self: center;
+  text-transform: capitalize;
+}
+
+.project-card .members-list {
+  color: #3838ff;
+}
+
+/* Icons spacing */
+i {
+  margin-right: 8px;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  text-transform: capitalize;
+}
+
+.created {
+  background-color: gray;
+}
+
+.uploaded {
+  background-color: orange;
+}
+
+.published {
+  background-color: green;
+}
+
+.card-actions button {
+  border-radius: 10px;
+  background: #9df3cf;
+  margin: 5px;
+}
+
+.card-actions .view-url-button {
+  color: #3838ff;
+  text-decoration: underline;
+  background: none;
+}

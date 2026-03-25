@@ -1,0 +1,170 @@
+<!-- <div class="menubar bold">
+  <p>Welcome {{dataSource?.userName || "Teacher"}},</p>
+  <button (click)="logout()">Logout</button>
+</div>
+<hr> -->
+<!-- <div class="teacherDashboard">
+  <h2>Dashboard</h2>
+  <button class="createProjectButton" (click)="routeToCreateProject()">Create Project</button>
+
+  <table border="1">
+
+    <tr>
+      <th>S.No.</th>
+      <th>Project Name</th>
+      <th>Members</th>
+      <th>Status</th>
+      <th>Preview</th>
+      <th>Action</th>
+    </tr>
+
+    <tr *ngFor="let p of projects">
+      <td>{{p.serialNumber}}</td>
+      <td>{{p.title}}</td>
+      <td>{{p.members?.join(', ') || 'No members'}}</td>
+      <td>{{p.status}}</td>
+      <td>
+        <a *ngIf="p.status !== 'published'" (click)="previewProject(p.projectId)" target="_blank">
+          Preview
+        </a>
+        <p *ngIf="p.status === 'published'">-</p>
+      </td>
+      <td>
+        <button *ngIf="p.status !== 'published'" (click)="publish(p)">
+          Publish
+        </button>
+        <div *ngIf="p.publicUrl && p.status === 'published'">
+          <a [href]="p.publicUrl" target="_blank">
+            View Public URL
+          </a>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div> -->
+
+<!-- <hr>
+<div *ngFor="let p of projects">
+
+    <h3>{{p.title}}</h3>
+
+    <p>Status: {{p.status}}</p>
+    <p>Members: {{p.members?.join(', ') || 'No members'}}</p>
+
+    
+    <a (click)="previewProject(p.projectId)" target="_blank">
+        Preview
+    </a>
+
+    <br><br>
+
+    
+    <button *ngIf="p.status !== 'published'" (click)="publish(p)">
+        Publish
+    </button>
+
+    <br><br>
+
+    
+    <div *ngIf="p.publicUrl">
+        <a [href]="p.publicUrl" target="_blank">
+            Open Public URL
+        </a>
+    </div>
+
+    <hr>
+
+</div> -->
+
+<!-- <div *ngFor="let p of projects">
+
+    <h3>{{p.title}}</h3>
+
+    <p>{{p.members.join(', ')}}</p>
+
+</div> -->
+
+<div class="dashboard-container">
+
+  <!-- 🔷 Top Toolbar -->
+  <mat-toolbar color="primary" class="toolbar">
+    <span class="spacer"></span>
+    <button mat-button>
+      <i class="fas fa-user-circle"></i> {{dataSource?.userName || "Teacher"}}
+    </button>
+    <button mat-button class="logoutButton" color="warn" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+  </mat-toolbar>
+
+  <!-- 🔷 Create Project Button -->
+  <div class="actions">
+    <span class="page-title">
+      <!-- <i class="fas fa-chalkboard-teacher"></i> Teacher  -->
+      Dashboard</span>
+      <span class="spacer"></span>
+    <button mat-raised-button color="accent" (click)="openCreateProject()">
+      <i class="fas fa-plus"></i> Create Project
+    </button>
+  </div>
+
+
+  <!-- 🔷 Project Cards -->
+  <div class="project-grid">
+
+    <mat-card class="project-card" *ngFor="let project of projects">
+
+      <mat-card-header>
+        <mat-card-title>
+          {{ project?.title || "No Title" }}
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <p>
+          <i class="fas fa-align-left"></i>
+          {{ project.description || 'No description' }}
+        </p>
+
+        <p>
+          <i class="fas fa-users"></i>
+          <span class="members-list">{{ project.members?.join(', ') || 'No members' }}</span>
+        </p>
+
+        <p>
+          <i class="fas fa-info-circle"></i>
+          Status: <span class="status-badge" [ngClass]="project.status">
+            {{ project.status }}
+          </span>
+        </p>
+
+      </mat-card-content>
+
+      <mat-card-actions class="card-actions">
+
+        <button mat-button color="primary" class="view-url-button" (click)="previewProject(project)" *ngIf="project?.status === 'uploaded'">
+          <i class="fas fa-eye"></i> Preview
+        </button>
+
+        <input type="file" hidden #fileInput (change)="upload($event, project.projectId)">
+
+        <button mat-button color="accent" (click)="fileInput.click()">
+          <i class="fas fa-upload"></i> Upload
+        </button>
+
+        <button mat-button color="accent" *ngIf="project?.status === 'uploaded'" (click)="publish(project)">
+          <i class="fas fa-brands fa-elementor"></i> Publish 
+        </button>
+
+        <button mat-button color="accent" class="view-url-button" *ngIf="project?.status === 'published'" (click)="onViewPublicUrl(project)">
+          <i class="fas fa-cloud"></i> View Website
+        </button>
+
+      </mat-card-actions>
+
+    </mat-card>
+
+  </div>
+
+</div>

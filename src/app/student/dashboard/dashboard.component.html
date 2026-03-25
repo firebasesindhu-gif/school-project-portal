@@ -1,0 +1,112 @@
+<!-- <h2>Dashboard</h2>
+
+<p>Welcome {{dataSource?.userName || "User"}}</p>
+
+<button (click)="logout()">Logout</button>
+
+<hr> -->
+
+<!-- <table border="1">
+
+    <tr>
+        <th>Project</th>
+        <th>Upload</th>
+        <th>View</th>
+    </tr>
+
+    <tr *ngFor="let p of projects">
+
+        <td>{{p.title}}</td>
+
+        <td>
+            <input type="file" (change)="selectFile($event,p)">
+            <button (click)="upload(p)">Upload</button>
+        </td>
+
+        <td>
+            <a (click)="previewProject(p.projectId)" [href]="'http://localhost:3000/preview/' + p.projectId" target="_blank">
+                Preview
+            </a>
+        </td>
+
+    </tr>
+
+</table> -->
+
+
+
+
+
+<div class="dashboard-container">
+
+  <!-- 🔷 Top Toolbar -->
+  <mat-toolbar color="primary" class="toolbar">
+    <span class="spacer"></span>
+    <button mat-button>
+      <i class="fas fa-user-circle"></i> {{dataSource?.userName || "User"}}
+    </button>
+    <button mat-button color="warn" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+  </mat-toolbar>
+
+  <div class="actions">
+    <span class="page-title">
+      Dashboard</span>
+  </div>
+
+  <!-- 🔷 Project Cards -->
+  <div class="project-grid">
+
+    <mat-card class="project-card" *ngFor="let project of projects">
+
+      <mat-card-header>
+        <mat-card-title>
+          {{ project.title }}
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <p>
+          <i class="fas fa-align-left"></i>
+          {{ project.description || 'No description' }}
+        </p>
+
+        <p>
+          <i class="fas fa-users"></i>
+          {{ project.members?.join(', ') || 'No members' }}
+        </p>
+
+        <p>
+          <i class="fas fa-info-circle"></i>
+          Status: <span class="status-badge" [ngClass]="project.status">
+            {{ project.status }}
+          </span>
+        </p>
+
+      </mat-card-content>
+
+      <mat-card-actions>
+
+        <button mat-button color="primary" class="view-url-button" (click)="previewProject(project)" *ngIf="project?.status === 'uploaded'">
+          <i class="fas fa-eye"></i> Preview
+        </button>
+
+        <input type="file" hidden #fileInput (change)="upload($event, project.projectId)">
+
+        <button mat-button color="accent" (click)="fileInput.click()">
+          <i class="fas fa-upload"></i> Upload
+        </button>
+
+        <button mat-button color="accent" class="view-url-button" *ngIf="project?.status === 'published'" (click)="onViewPublicUrl(project)">
+          <i class="fas fa-cloud"></i> View Website
+        </button>
+
+      </mat-card-actions>
+
+    </mat-card>
+
+  </div>
+
+</div>

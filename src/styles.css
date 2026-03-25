@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'sans-serif';
+}
+
+body button {
+    padding: 10px;
+    background: #e9c456;
+    border-radius: 10px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+body a {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+body table {
+    text-align: center;
+    vertical-align: middle;
+}
+
+body table tr th, body table tr td {    
+    padding: 3px;
+    text-transform: capitalize;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+body {
+    font-size: 18px;
+    font-family: 'sans-serif';
+}
+
+body button {
+    font-weight: bold !important;
+}

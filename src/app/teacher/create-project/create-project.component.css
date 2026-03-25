@@ -1,0 +1,71 @@
+/* .createProjectForm {
+    display: block;
+    width: 40%;
+    margin-left: 25%;
+    padding: 2%;
+    background: #f7f9d9;
+}
+
+.createProjectForm h2 {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.createProjectForm label {
+    margin-left: 10%;
+    font-weight: bold;
+    margin-right: 1%;
+}
+
+.createProjectForm input {
+    border: none;
+    border-bottom: 1px solid;
+    height: 25px;
+    width: 50%;
+    vertical-align: middle;
+}
+
+.createProjectForm textarea {
+    width: 54%;
+    border: none;
+    border-bottom: 1px solid;
+    height: 50px;
+    vertical-align: middle;
+}
+
+.createProjectForm button {
+    margin-left: 45%;
+}
+ */
+
+.create-project-container {
+    padding: 20px;
+}
+
+.create-project-container h2 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.actions {
+    text-align: right;
+}
+
+.create-project-container button {
+    border-radius: 10px;
+    background: #9df3cf;
+    margin: 5px;
+}
+
+.create-project-container .secondary-button {
+    background: #cbc4c4;
+}
+
+.create-project-container mat-form-field input {
+    padding: 5px;
+}
